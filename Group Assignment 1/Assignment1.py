@@ -44,7 +44,7 @@ else:
    #if gas
    if product == 'g':
       product_name = 'Gas'
-      litres = float(input('Enter the number of Liters: '))
+      litres = int(input('Enter the number of Liters: '))
 
       #validate litres
       if litres <= 0:
