@@ -82,12 +82,12 @@ else:
    province = input('Please enter the 2 letters province abbreviation: ').lower()
 
    #check GST
-   if province == 'ab' or province == 'bc':
-      gst_rate = GST_AB_AND_BC / 100
-   else:
-      if province == 'on':
+   match province:
+      case 'ab' |'bc':
+         gst_rate = GST_AB_AND_BC / 100
+      case 'on':
          gst_rate = GST_ON / 100
-      else:
+      case _:
          gst_rate = GST_OTHER / 100
 
    #calculate
