@@ -78,6 +78,6 @@ else:
    #output
    print('----------------------------------------------------------------------------------------------------\n'
    f'Product\t # of Liters\t Price Before Discount\t Price After Discount\t   GST\t\tTotal Price\n'
-   f'{product_name:^8}{litres:^12}{price_before_discount:^30.2f}{price_after_discount:^20.2f}{gst:^15.2f}{total:^20.2f}\n'
+   f'{product_name:^8}{litres:^12}{price_before_discount:^30.1f}{price_after_discount:^20.1f}{gst:^15.2f}{total:^20.2f}\n'
    '----------------------------------------------------------------------------------------------------\n'
    'Thanks for your business, Good Bye')
