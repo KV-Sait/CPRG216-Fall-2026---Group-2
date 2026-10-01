@@ -29,10 +29,10 @@ else:
          print('Number of cases should be > 0')
          exit()
          
-      #convert cases to liters
-      liters = oil_case * OIL_CASE_SIZE
+      #convert cases to litres
+      litres = oil_case * OIL_CASE_SIZE
 
-      price_before_discount = OIL_RATE * liters
+      price_before_discount = OIL_RATE * litres
 
       #calculate oil
       if oil_case > OIL_DISCOUNT_LIMIT:
@@ -44,17 +44,17 @@ else:
    #if gas
    if product == 'g':
       product_name = 'Gas'
-      liters = float(input('Enter the number of Liters: '))
+      litres = float(input('Enter the number of Liters: '))
 
-      #validate liters
-      if liters <=0:
+      #validate litres
+      if litres <= 0:
          print('Number of liters should be > 0')
          exit()
 
-      price_before_discount = GAS_RATE * liters
+      price_before_discount = GAS_RATE * litres
 
       #calculate gas
-      if liters > GAS_DISCOUNT_LIMIT:
+      if litres > GAS_DISCOUNT_LIMIT:
          price_after_discount = price_before_discount - (price_before_discount * DISCOUNT_AMOUNT)
       else:
          price_after_discount = price_before_discount
@@ -78,6 +78,6 @@ else:
    #output
    print('----------------------------------------------------------------------------------------------------\n'
    f'Product\t # of Liters\t Price Before Discount\t Price After Discount\t   GST\t\tTotal Price\n'
-   f'{product_name:^8}{liters:^12}{price_before_discount:^30.2f}{price_after_discount:^20.2f}{gst:^15.2f}{total:^20.2f}\n'
+   f'{product_name:^8}{litres:^12}{price_before_discount:^30.2f}{price_after_discount:^20.2f}{gst:^15.2f}{total:^20.2f}\n'
    '----------------------------------------------------------------------------------------------------\n'
    'Thanks for your business, Good Bye')
