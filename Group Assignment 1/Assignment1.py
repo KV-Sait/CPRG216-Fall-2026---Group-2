@@ -1,3 +1,18 @@
+'''
+
+File Name: Assignment1.py
+Authors:
+   Russell Belmonte
+   Jordan La
+   Addison Lewandowski
+   Kenny Vo
+
+Program Description:
+Assignment: Programming Basics
+Oil/Gas Station Scenario
+
+'''
+
 #constant
 OIL_RATE = 1.25
 OIL_CASE_SIZE =12
