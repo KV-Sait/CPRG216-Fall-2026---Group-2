@@ -1,0 +1,133 @@
+Test 1: User enters invalid option
+---------------------------------------------
+*** Welcome to Gas Station Program! ***
+---------------------------------------------
+Please Select the type of Purchase:
+G: Gas
+O: Oil
+>>> w
+Invalid input, you should enter g/G or o/O
+PS C:\Users\dracy\AppData\Local\Programs\Microsoft VS Code> 
+
+
+
+Test 2: User enters g/G, 5000 litres, and ab
+---------------------------------------------
+*** Welcome to Gas Station Program! ***
+---------------------------------------------
+Please Select the type of Purchase:
+G: Gas
+O: Oil
+>>> g
+Enter the number of litres of gas: 5000
+Please enter the 2 letters province abbreviation: ab
+----------------------------------------------------------------------------------------------------
+Product  # of Liters     Price Before Discount   Price After Discount      GST          Total Price
+  Gas       5000                5250.0                   4725.0           236.25           4961.25       
+----------------------------------------------------------------------------------------------------
+Thanks for your business, Good Bye
+PS C:\Users\dracy\AppData\Local\Programs\Microsoft VS Code> 
+
+
+
+Test 3: User enters 'g/G', 1500 litres, and 'on'
+---------------------------------------------
+*** Welcome to Gas Station Program! ***
+---------------------------------------------
+Please Select the type of Purchase:
+G: Gas
+O: Oil
+>>> G
+Enter the number of litres of gas: 1500 
+Please enter the 2 letters province abbreviation: ON
+----------------------------------------------------------------------------------------------------
+Product  # of Liters     Price Before Discount   Price After Discount      GST          Total Price
+  Gas       1500                1575.0                   1575.0           204.75           1779.75       
+----------------------------------------------------------------------------------------------------
+Thanks for your business, Good Bye
+PS C:\Users\dracy\AppData\Local\Programs\Microsoft VS Code> 
+
+
+
+Test 4: User enters 'o/O', 10 cases, and 'ab'
+---------------------------------------------
+*** Welcome to Gas Station Program! ***
+---------------------------------------------
+Please Select the type of Purchase:
+G: Gas
+O: Oil
+>>> o
+Enter # of cases of Oil: 10
+Please enter the 2 letters province abbreviation: ab
+----------------------------------------------------------------------------------------------------
+Product  # of Liters     Price Before Discount   Price After Discount      GST          Total Price
+  Oil       120                 150.0                    135.0             6.75             141.75       
+----------------------------------------------------------------------------------------------------
+Thanks for your business, Good Bye
+PS C:\Users\dracy\AppData\Local\Programs\Microsoft VS Code> 
+
+
+
+Test 5: User enters 'o/O', 5 cases, and 'on'
+---------------------------------------------
+*** Welcome to Gas Station Program! ***
+---------------------------------------------
+Please Select the type of Purchase:
+G: Gas
+O: Oil
+>>> o
+Enter # of cases of Oil: 5
+Please enter the 2 letters province abbreviation: on
+----------------------------------------------------------------------------------------------------
+Product  # of Liters     Price Before Discount   Price After Discount      GST          Total Price
+  Oil        60                  75.0                     75.0             9.75             84.75        
+----------------------------------------------------------------------------------------------------
+Thanks for your business, Good Bye
+PS C:\Users\dracy\AppData\Local\Programs\Microsoft VS Code> 
+
+
+
+Test 6: User enters 'o/O', 6 cases, and 'NL'
+---------------------------------------------
+*** Welcome to Gas Station Program! ***
+---------------------------------------------
+Please Select the type of Purchase:
+G: Gas
+O: Oil
+>>> o
+Enter # of cases of Oil: 6
+Please enter the 2 letters province abbreviation: NL
+----------------------------------------------------------------------------------------------------
+Product  # of Liters     Price Before Discount   Price After Discount      GST          Total Price
+  Oil        72                  90.0                     90.0             13.50            103.50       
+----------------------------------------------------------------------------------------------------
+Thanks for your business, Good Bye
+PS C:\Users\dracy\AppData\Local\Programs\Microsoft VS Code> 
+
+
+
+Test 7: Invalid number of cases/litres
+---------------------------------------------
+*** Welcome to Gas Station Program! ***
+---------------------------------------------
+Please Select the type of Purchase:
+G: Gas
+O: Oil
+>>> o
+Enter # of cases of Oil: -2
+Number of oil cases should be > 0
+PS C:\Users\dracy\AppData\Local\Programs\Microsoft VS Code> 
+
+
+
+Test 7: Invalid number of cases/litres
+---------------------------------------------
+*** Welcome to Gas Station Program! ***
+---------------------------------------------
+Please Select the type of Purchase:
+G: Gas
+O: Oil
+>>> g
+Enter the number of litres of gas: 0
+Number of litres should be > 0
+PS C:\Users\dracy\AppData\Local\Programs\Microsoft VS Code> 
