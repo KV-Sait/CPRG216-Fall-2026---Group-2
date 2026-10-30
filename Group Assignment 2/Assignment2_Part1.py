@@ -11,17 +11,6 @@ Assignment: Programming Strategies
 Part 1: Monthly Payment Calculator
 
 Started: 2026-10-26 | Finished: 2026-XX-XX
-
-NOTE: Any comments with "#TEST" can be deleted if you want, 
-but it helps with understanding what's going on so TODO: Delete or cleanup #TEST when finished.
-
-Test inputs:
-a
-a
-800000
-10
-15
-3
 '''
 
 # Minimum Down Payment Component
@@ -102,12 +91,14 @@ match(mortgage_term):
         mortgage_interest_rate = 5.30
     case 10:
         mortgage_interest_rate = 6.00
+
+# Print Mortgage Interest Rate
 print(f"Interest rate for the term will be {mortgage_interest_rate:,.2f}%")
 
 # Morgage Payment Amount
 num_monthly_payments = mortgage_amortization_period * 12
 effective_monthly_rate = ((1 + (mortgage_interest_rate/2)) ** 2) ** (1/12) - 1
-monthly_payment = principal_amount*(effective_monthly_rate*(1 + effective_monthly_rate)**(num_monthly_payments))/((1 + effective_monthly_rate)**(num_monthly_payments) - 1)
+monthly_payment = principal_amount * (effective_monthly_rate * (1 + effective_monthly_rate) ** (num_monthly_payments)) / ((1 + effective_monthly_rate)**(num_monthly_payments) - 1)
 
-print(f"Monthly Rate: {effective_monthly_rate}") #TEST PRINT. Not needed tbh. TODO: Delete.
-print(f"Monthly Payment: ${monthly_payment:,.2f}") #TEST PRINT. TODO: Clean up.
+# Print Mortgage Payment Amount
+print(f"Monthly payment amount is: ${monthly_payment:,.2f}")
