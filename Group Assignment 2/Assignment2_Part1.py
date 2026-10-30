@@ -54,23 +54,26 @@ while down_payment_percent < min_down_payment_percent:
 
 # Required Mortgage Default Insurance
 if 5 <= down_payment_percent < 10:
-    mortgage_insurance_premium = 0.05
+    mortgage_insurance_premium = 5
 elif 10 <= down_payment_percent < 15:
-    mortgage_insurance_premium = 0.04
+    mortgage_insurance_premium = 4
 elif 15 <= down_payment_percent < 20:
-    mortgage_insurance_premium = 0.03
+    mortgage_insurance_premium = 3
 else:
-    mortgage_insurance_premium = 0.0
+    mortgage_insurance_premium = 0
 
 # Recalculate
-down_payment = purchase_price * down_payment_percent
-insurance_cost = (purchase_price - down_payment) * mortgage_insurance_premium #TODO: NEEDS a better name.
-principle_amount = purchase_price - down_payment + insurance_cost #TODO: NEEDS a better variable name.
-print(f"Down payment amount: ${down_payment:,.0f}") #TEST PRINT TODO: Make a bit cleaner of a print or delete?
-print(f"Insurance cost: ${insurance_cost:,.0f}") #TEST PRINT TODO: Make a bit cleaner of a print or delete?
-print(f"Principle amount: ${principle_amount:,.0f}") #TEST PRINT TODO: Make a bit cleaner of a print or delete?
+down_payment = purchase_price * down_payment_percent / 100
+insurance_cost = (purchase_price - down_payment) * mortgage_insurance_premium / 100
+principal_amount = purchase_price - down_payment + insurance_cost
+
+# Print Calculations
+print(f"Down payment amount is ${down_payment}")
+print(f"Mortgage insurance price is ${insurance_cost}")
+print(f"Total mortgage amount is ${principal_amount}")
 
 # Morgage Payment Component
+
 mortgage_term = int(input("Enter Mortgage Term (years): "))
 mortgage_amortization_period = int(input("Enter mortgage amortization period (every 5 years): ")) #TODO: Make this better pls, ik this is ass lmao.
 mortgage_amortization_years = mortgage_amortization_period * 5 #TODO: Delete this I hate this... I hope my suffering is funny to you tho, sorry I'm not actually going into detail and making you waste time by reading this exact sentence.
@@ -91,7 +94,7 @@ match(mortgage_term):
 # Morgage Payment Calculations
 print(mortgage_interest_rate)
 monthly_rate = ((1 + (mortgage_interest_rate/2)) ** 2) ** (1/12) - 1
-monthly_payment = principle_amount*(monthly_rate*(1 + monthly_rate)**(mortgage_amortization_months))/((1 + monthly_rate)**(mortgage_amortization_months) - 1)
+monthly_payment = principal_amount*(monthly_rate*(1 + monthly_rate)**(mortgage_amortization_months))/((1 + monthly_rate)**(mortgage_amortization_months) - 1)
 
 print(f"Monthly Rate: {monthly_rate}") #TEST PRINT. Not needed tbh. TODO: Delete.
 print(f"Monthly Payment: ${monthly_payment:,.2f}") #TEST PRINT. TODO: Clean up.
