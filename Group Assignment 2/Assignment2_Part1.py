@@ -28,7 +28,6 @@ a
 
 # Variables and Constants
 minimum_down_payment_check = False
-minimum_down_payment = float()
 client_down_payment = float()
 mortgage_interest_rate = float()
 
@@ -37,18 +36,23 @@ client_name = str(input("Enter client name: "))
 client_address = str(input("Enter address of property: "))
 client_purchase_price = float(input("Enter purchase price: "))
 
-# Minimum Down Payment Check Loop
+# Calculate minimum down payment percentage
+minimum_down_payment = float()
+#Calculate minimum down payment
+if client_purchase_price <= 400000:
+    minimum_down_payment = 0.05 * client_purchase_price
+elif (client_purchase_price > 400000) and (client_purchase_price <= 900000):
+    minimum_down_payment = (0.05 * 400000) + (0.10 * (client_purchase_price - 400000))
+elif client_purchase_price > 900000:
+    minimum_down_payment = 0.20 * client_purchase_price
+
+# Determine if next input satisfies the Minimum Down Payment
 while minimum_down_payment_check == False:
     minimum_down_payment_check = True
-    client_down_payment_percentage = float(input("Enter down payment percentage (minimum 5): ")) * 0.01
+
+    client_down_payment_percentage = float(input(f"Enter down payment percentage (minimum {minimum_down_payment}): ")) * 0.01
     client_down_payment = client_purchase_price * client_down_payment_percentage #Technically don't need to make this a varibale, but helps with readability. Sorta. Kinda.. Sorry...
-    #Calculate minimum down payment
-    if client_purchase_price <= 400000:
-        minimum_down_payment = 0.05 * client_purchase_price
-    elif (client_purchase_price > 400000) and (client_purchase_price <= 900000):
-        minimum_down_payment = (0.05 * 400000) + (0.10 * (client_purchase_price - 400000))
-    elif client_purchase_price > 900000:
-        minimum_down_payment = 0.20 * client_purchase_price
+    
     #Minimum down payment flag check
     if (client_down_payment) < (minimum_down_payment):
         minimum_down_payment_check = False
