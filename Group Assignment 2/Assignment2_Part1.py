@@ -27,7 +27,6 @@ a
 # Minimum Down Payment Component
 
 # Variables and Constants
-client_down_payment = float()
 mortgage_interest_rate = float()
 
 # Initial User Inputs
@@ -63,11 +62,11 @@ elif 15 <= down_payment_percent < 20:
 else:
     mortgage_insurance_premium = 0.0
 
-# Calculations
-client_down_payment = purchase_price * down_payment_percent
-insurance_cost = (purchase_price - client_down_payment) * mortgage_insurance_premium #TODO: NEEDS a better name.
-principle_amount = purchase_price - client_down_payment + insurance_cost #TODO: NEEDS a better variable name.
-print(f"Down payment amount: ${client_down_payment:,.0f}") #TEST PRINT TODO: Make a bit cleaner of a print or delete?
+# Recalculate
+down_payment = purchase_price * down_payment_percent
+insurance_cost = (purchase_price - down_payment) * mortgage_insurance_premium #TODO: NEEDS a better name.
+principle_amount = purchase_price - down_payment + insurance_cost #TODO: NEEDS a better variable name.
+print(f"Down payment amount: ${down_payment:,.0f}") #TEST PRINT TODO: Make a bit cleaner of a print or delete?
 print(f"Insurance cost: ${insurance_cost:,.0f}") #TEST PRINT TODO: Make a bit cleaner of a print or delete?
 print(f"Principle amount: ${principle_amount:,.0f}") #TEST PRINT TODO: Make a bit cleaner of a print or delete?
 
