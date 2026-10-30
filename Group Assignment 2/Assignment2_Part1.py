@@ -40,7 +40,7 @@ client_purchase_price = float(input("Enter purchase price: "))
 # Minimum Down Payment Check Loop
 while minimum_down_payment_check == False:
     minimum_down_payment_check = True
-    client_down_payment_percentage = float(input("Enter client's down payment (in %): ")) * 0.01
+    client_down_payment_percentage = float(input("Enter down payment percentage (minimum 5): ")) * 0.01
     client_down_payment = client_purchase_price * client_down_payment_percentage #Technically don't need to make this a varibale, but helps with readability. Sorta. Kinda.. Sorry...
     #Calculate minimum down payment
     if client_purchase_price <= 400000:
