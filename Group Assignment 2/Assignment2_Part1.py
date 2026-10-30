@@ -105,8 +105,9 @@ match(mortgage_term):
 print(f"Interest rate for the term will be {mortgage_interest_rate:,.2f}%")
 
 # Morgage Payment Amount
-monthly_rate = ((1 + (mortgage_interest_rate/2)) ** 2) ** (1/12) - 1
-monthly_payment = principal_amount*(monthly_rate*(1 + monthly_rate)**(mortgage_amortization_months))/((1 + monthly_rate)**(mortgage_amortization_months) - 1)
+num_monthly_payments = mortgage_amortization_period * 12
+effective_monthly_rate = ((1 + (mortgage_interest_rate/2)) ** 2) ** (1/12) - 1
+monthly_payment = principal_amount*(effective_monthly_rate*(1 + effective_monthly_rate)**(num_monthly_payments))/((1 + effective_monthly_rate)**(num_monthly_payments) - 1)
 
-print(f"Monthly Rate: {monthly_rate}") #TEST PRINT. Not needed tbh. TODO: Delete.
+print(f"Monthly Rate: {effective_monthly_rate}") #TEST PRINT. Not needed tbh. TODO: Delete.
 print(f"Monthly Payment: ${monthly_payment:,.2f}") #TEST PRINT. TODO: Clean up.
