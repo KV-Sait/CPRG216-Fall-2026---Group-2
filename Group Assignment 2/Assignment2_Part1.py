@@ -38,18 +38,18 @@ purchase_price = float(input("Enter purchase price: "))
 
 # Calculate minimum down payment
 if purchase_price <= 400000:
-    min_down_payment = 0.05 * purchase_price
+    min_down_payment = 0.05 * purchase_price # Minimum Down Payment = 5%
 elif (400000 < purchase_price <= 900000):
-    min_down_payment = (0.05 * 400000) + (0.10 * (purchase_price - 400000))
+    min_down_payment = 20000 + (0.10 * (purchase_price - 400000)) # Minimum Down Payment = 5% of $400 000 (= $20 000) + 10% of the Remainder
 elif purchase_price > 900000:
-    min_down_payment = 0.20 * purchase_price
+    min_down_payment = 0.20 * purchase_price # Minimum Down Payment = 20%
+
+# Calculate minimum down payment percentage
+min_down_payment_percent = float(min_down_payment / purchase_price) * 100
 
 # Determine if next input satisfies the Minimum Down Payment
 while min_down_payment_check == False:
     min_down_payment_check = True
-
-    # Calculate minimum down payment percentage
-    min_down_payment_percent = float(min_down_payment / purchase_price) * 100
 
     client_down_payment_percentage = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): ")) * 0.01
     client_down_payment = purchase_price * client_down_payment_percentage #Technically don't need to make this a varibale, but helps with readability. Sorta. Kinda.. Sorry...
