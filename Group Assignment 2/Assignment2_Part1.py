@@ -71,8 +71,8 @@ if client_down_payment_percentage >= 0.20:
     premium_insurance_rate = 0.0
 
 # Calculations
-insurance_cost = (client_purchase_price - client_down_payment) * premium_insurance_rate #TODO: NEEDS a better name.
-principle_amount = client_purchase_price - client_down_payment + insurance_cost #TODO: NEEDS a better variable name.
+insurance_cost = (purchase_price - client_down_payment) * premium_insurance_rate #TODO: NEEDS a better name.
+principle_amount = purchase_price - client_down_payment + insurance_cost #TODO: NEEDS a better variable name.
 print(f"Down payment amount: ${client_down_payment:,.0f}") #TEST PRINT TODO: Make a bit cleaner of a print or delete?
 print(f"Insurance cost: ${insurance_cost:,.0f}") #TEST PRINT TODO: Make a bit cleaner of a print or delete?
 print(f"Principle amount: ${principle_amount:,.0f}") #TEST PRINT TODO: Make a bit cleaner of a print or delete?
