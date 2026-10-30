@@ -47,24 +47,23 @@ elif purchase_price > 900000:
 min_down_payment_percent = float(min_down_payment / purchase_price) * 100
 
 # Input for down payment percentage
-down_payment_percentage = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): ")) * 0.01
-while down_payment_percentage < min_down_payment_percent:
-    down_payment_percentage = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): ")) * 0.01 
+down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): "))
+while down_payment_percent < min_down_payment_percent:
+    down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): "))
 
 # Mortgage Default Insurance Component
 
-premium_insurance_rate = 0.0
-if down_payment_percentage >= 0.05 and down_payment_percentage < 0.10:
+if 5 <= down_payment_percent >= 0.05 and down_payment_percent < 0.10:
     premium_insurance_rate = 0.05
-if down_payment_percentage >= 0.10 and down_payment_percentage < 0.15:
+if down_payment_percent >= 0.10 and down_payment_percent < 0.15:
     premium_insurance_rate = 0.04
-if down_payment_percentage >= 0.15 and down_payment_percentage < 0.20:
+if down_payment_percent >= 0.15 and down_payment_percent < 0.20:
     premium_insurance_rate = 0.03
-if down_payment_percentage >= 0.20:
+if down_payment_percent >= 0.20:
     premium_insurance_rate = 0.0
 
 # Calculations
-client_down_payment = purchase_price * down_payment_percentage
+client_down_payment = purchase_price * down_payment_percent
 insurance_cost = (purchase_price - client_down_payment) * premium_insurance_rate #TODO: NEEDS a better name.
 principle_amount = purchase_price - client_down_payment + insurance_cost #TODO: NEEDS a better variable name.
 print(f"Down payment amount: ${client_down_payment:,.0f}") #TEST PRINT TODO: Make a bit cleaner of a print or delete?
