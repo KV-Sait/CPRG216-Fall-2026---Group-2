@@ -53,18 +53,19 @@ while down_payment_percent < min_down_payment_percent:
 
 # Mortgage Default Insurance Component
 
-if 5 <= down_payment_percent >= 0.05 and down_payment_percent < 0.10:
-    premium_insurance_rate = 0.05
-if down_payment_percent >= 0.10 and down_payment_percent < 0.15:
-    premium_insurance_rate = 0.04
-if down_payment_percent >= 0.15 and down_payment_percent < 0.20:
-    premium_insurance_rate = 0.03
-if down_payment_percent >= 0.20:
-    premium_insurance_rate = 0.0
+# Required Mortgage Default Insurance
+if 5 <= down_payment_percent < 10:
+    mortgage_insurance_premium = 0.05
+elif 10 <= down_payment_percent < 15:
+    mortgage_insurance_premium = 0.04
+elif 15 <= down_payment_percent < 20:
+    mortgage_insurance_premium = 0.03
+else:
+    mortgage_insurance_premium = 0.0
 
 # Calculations
 client_down_payment = purchase_price * down_payment_percent
-insurance_cost = (purchase_price - client_down_payment) * premium_insurance_rate #TODO: NEEDS a better name.
+insurance_cost = (purchase_price - client_down_payment) * mortgage_insurance_premium #TODO: NEEDS a better name.
 principle_amount = purchase_price - client_down_payment + insurance_cost #TODO: NEEDS a better variable name.
 print(f"Down payment amount: ${client_down_payment:,.0f}") #TEST PRINT TODO: Make a bit cleaner of a print or delete?
 print(f"Insurance cost: ${insurance_cost:,.0f}") #TEST PRINT TODO: Make a bit cleaner of a print or delete?
