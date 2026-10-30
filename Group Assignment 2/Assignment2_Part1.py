@@ -23,16 +23,19 @@ a
 15
 3
 '''
+
+# Minimum Down Payment Component
+
 # Variables and Constants
 minimum_down_payment_check = False
 minimum_down_payment = float()
 client_down_payment = float()
 mortgage_interest_rate = float()
 
-# Inputs
-client_name = str(input("Enter client's name: "))
-client_address = str(input("Enter client's address: "))
-client_purchase_price = float(input("Enter client's purchase price: "))
+# Initial User Inputs
+client_name = str(input("Enter client name: "))
+client_address = str(input("Enter address of property: "))
+client_purchase_price = float(input("Enter purchase price: "))
 
 # Minimum Down Payment Check Loop
 while minimum_down_payment_check == False:
