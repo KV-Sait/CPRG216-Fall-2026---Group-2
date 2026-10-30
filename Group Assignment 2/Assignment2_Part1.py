@@ -74,8 +74,23 @@ print(f"Total mortgage amount is ${principal_amount}")
 
 # Morgage Payment Component
 
-mortgage_term = int(input("Enter Mortgage Term (years): "))
-mortgage_amortization_period = int(input("Enter mortgage amortization period (every 5 years): ")) #TODO: Make this better pls, ik this is ass lmao.
+# List Allowed Values
+mortgage_term_allowed = [1, 2, 3, 5, 10]
+mortgage_amortization_allowed = [5, 10, 15, 20, 25]
+
+#Input mortgage term
+mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
+while mortgage_term not in mortgage_term_allowed:
+    print("Please enter a valid choice")
+    mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
+
+# Input mortgage amortization period
+mortgage_amortization_period = int(input("Enter mortgage amortization period (5, 10, 15, 20, 25): "))
+while mortgage_term not in mortgage_term_allowed:
+    print("Please enter a valid choice")
+    mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
+
+
 mortgage_amortization_years = mortgage_amortization_period * 5 #TODO: Delete this I hate this... I hope my suffering is funny to you tho, sorry I'm not actually going into detail and making you waste time by reading this exact sentence.
 mortgage_amortization_months = mortgage_amortization_years * 12
 
