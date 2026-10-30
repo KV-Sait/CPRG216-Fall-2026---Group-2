@@ -27,7 +27,6 @@ a
 # Minimum Down Payment Component
 
 # Variables and Constants
-min_down_payment_check = False
 client_down_payment = float()
 mortgage_interest_rate = float()
 
@@ -47,20 +46,10 @@ elif purchase_price > 900000:
 # Calculate minimum down payment percentage
 min_down_payment_percent = float(min_down_payment / purchase_price) * 100
 
+# Input for down payment percentage
 down_payment_percentage = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): ")) * 0.01
-
-# Determine if next input satisfies the Minimum Down Payment
-while min_down_payment_check == False:
-    min_down_payment_check = True
-
-    down_payment_percentage = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): ")) * 0.01
-    client_down_payment = purchase_price * down_payment_percentage #Technically don't need to make this a varibale, but helps with readability. Sorta. Kinda.. Sorry...
-    
-    #Minimum down payment flag check
-    if (client_down_payment) < (min_down_payment):
-        minimum_down_payment_check = False
-        print(f"${(client_down_payment):,.0f} is less than ${min_down_payment:,.0f}") #TEST PRINT
-        print(f"Expecting minimum percentage: {(min_down_payment / purchase_price) * 100}%") #TEST PRINT
+while down_payment_percentage < min_down_payment_percent:
+    down_payment_percentage = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): ")) * 0.01 
 
 # Mortgage Default Insurance Component
 
@@ -75,6 +64,7 @@ if down_payment_percentage >= 0.20:
     premium_insurance_rate = 0.0
 
 # Calculations
+client_down_payment = purchase_price * down_payment_percentage
 insurance_cost = (purchase_price - client_down_payment) * premium_insurance_rate #TODO: NEEDS a better name.
 principle_amount = purchase_price - client_down_payment + insurance_cost #TODO: NEEDS a better variable name.
 print(f"Down payment amount: ${client_down_payment:,.0f}") #TEST PRINT TODO: Make a bit cleaner of a print or delete?
