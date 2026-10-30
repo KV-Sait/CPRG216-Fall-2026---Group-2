@@ -1,7 +1,15 @@
 '''
-Group2Assignment2-P1.py
-Addison Lewandowski (TODO: ADD GROUP NAMES HERE LATER)
-Programming Strategies Part:1 
+File Name: Assignment2-Part1.py
+
+Group Members:
+Addison Lewandowski
+Russell Belmonte
+Jordan La
+Kenny Vo
+
+Assignment: Programming Strategies
+Part 1: Monthly Payment Calculator
+
 Started: 2026-10-26 | Finished: 2026-XX-XX
 
 NOTE: Any comments with "#TEST" can be deleted if you want, 
