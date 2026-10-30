@@ -27,7 +27,7 @@ a
 # Minimum Down Payment Component
 
 # Variables and Constants
-minimum_down_payment_check = False
+min_down_payment_check = False
 client_down_payment = float()
 mortgage_interest_rate = float()
 
@@ -36,30 +36,32 @@ client_name = str(input("Enter client name: "))
 address = str(input("Enter address of property: "))
 purchase_price = float(input("Enter purchase price: "))
 
-# Calculate minimum down payment percentage
-minimum_down_payment = float()
-#Calculate minimum down payment
+# Calculate minimum down payment
 if purchase_price <= 400000:
-    minimum_down_payment = 0.05 * purchase_price
-elif (purchase_price > 400000) and (purchase_price <= 900000):
-    minimum_down_payment = (0.05 * 400000) + (0.10 * (purchase_price - 400000))
+    min_down_payment = 0.05 * purchase_price
+elif (400000 < purchase_price <= 900000):
+    min_down_payment = (0.05 * 400000) + (0.10 * (purchase_price - 400000))
 elif purchase_price > 900000:
-    minimum_down_payment = 0.20 * purchase_price
+    min_down_payment = 0.20 * purchase_price
 
 # Determine if next input satisfies the Minimum Down Payment
-while minimum_down_payment_check == False:
-    minimum_down_payment_check = True
+while min_down_payment_check == False:
+    min_down_payment_check = True
 
-    client_down_payment_percentage = float(input(f"Enter down payment percentage (minimum {minimum_down_payment}): ")) * 0.01
+    # Calculate minimum down payment percentage
+    min_down_payment_percent = float(min_down_payment / purchase_price) * 100
+
+    client_down_payment_percentage = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): ")) * 0.01
     client_down_payment = purchase_price * client_down_payment_percentage #Technically don't need to make this a varibale, but helps with readability. Sorta. Kinda.. Sorry...
     
     #Minimum down payment flag check
-    if (client_down_payment) < (minimum_down_payment):
+    if (client_down_payment) < (min_down_payment):
         minimum_down_payment_check = False
-        print(f"${(client_down_payment):,.0f} is less than ${minimum_down_payment:,.0f}") #TEST PRINT
-        print(f"Expecting minimum percentage: {(minimum_down_payment / purchase_price) * 100}%") #TEST PRINT
-    
+        print(f"${(client_down_payment):,.0f} is less than ${min_down_payment:,.0f}") #TEST PRINT
+        print(f"Expecting minimum percentage: {(min_down_payment / purchase_price) * 100}%") #TEST PRINT
+
 # Mortgage Default Insurance Component
+
 premium_insurance_rate = 0.0
 if client_down_payment_percentage >= 0.05 and client_down_payment_percentage < 0.10:
     premium_insurance_rate = 0.05
