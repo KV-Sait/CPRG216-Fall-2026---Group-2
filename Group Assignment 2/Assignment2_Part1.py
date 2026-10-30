@@ -47,12 +47,14 @@ elif purchase_price > 900000:
 # Calculate minimum down payment percentage
 min_down_payment_percent = float(min_down_payment / purchase_price) * 100
 
+down_payment_percentage = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): ")) * 0.01
+
 # Determine if next input satisfies the Minimum Down Payment
 while min_down_payment_check == False:
     min_down_payment_check = True
 
-    client_down_payment_percentage = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): ")) * 0.01
-    client_down_payment = purchase_price * client_down_payment_percentage #Technically don't need to make this a varibale, but helps with readability. Sorta. Kinda.. Sorry...
+    down_payment_percentage = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): ")) * 0.01
+    client_down_payment = purchase_price * down_payment_percentage #Technically don't need to make this a varibale, but helps with readability. Sorta. Kinda.. Sorry...
     
     #Minimum down payment flag check
     if (client_down_payment) < (min_down_payment):
@@ -63,13 +65,13 @@ while min_down_payment_check == False:
 # Mortgage Default Insurance Component
 
 premium_insurance_rate = 0.0
-if client_down_payment_percentage >= 0.05 and client_down_payment_percentage < 0.10:
+if down_payment_percentage >= 0.05 and down_payment_percentage < 0.10:
     premium_insurance_rate = 0.05
-if client_down_payment_percentage >= 0.10 and client_down_payment_percentage < 0.15:
+if down_payment_percentage >= 0.10 and down_payment_percentage < 0.15:
     premium_insurance_rate = 0.04
-if client_down_payment_percentage >= 0.15 and client_down_payment_percentage < 0.20:
+if down_payment_percentage >= 0.15 and down_payment_percentage < 0.20:
     premium_insurance_rate = 0.03
-if client_down_payment_percentage >= 0.20:
+if down_payment_percentage >= 0.20:
     premium_insurance_rate = 0.0
 
 # Calculations
