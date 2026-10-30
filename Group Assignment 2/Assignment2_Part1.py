@@ -90,24 +90,21 @@ while mortgage_term not in mortgage_term_allowed:
     print("Please enter a valid choice")
     mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
 
-
-mortgage_amortization_years = mortgage_amortization_period * 5 #TODO: Delete this I hate this... I hope my suffering is funny to you tho, sorry I'm not actually going into detail and making you waste time by reading this exact sentence.
-mortgage_amortization_months = mortgage_amortization_years * 12
-
+# Mortgage Interest Rate
 match(mortgage_term):
     case 1:
-        mortgage_interest_rate = 0.059
+        mortgage_interest_rate = 5.90
     case 2:
-        mortgage_interest_rate = 0.058
-    case 3 | 4:
-        mortgage_interest_rate = 0.055
-    case 5 | 6 | 7 | 8 | 9:
-        mortgage_interest_rate = 0.053
+        mortgage_interest_rate = 5.80
+    case 3:
+        mortgage_interest_rate = 5.50
+    case 5:
+        mortgage_interest_rate = 5.30
     case 10:
-        mortgage_interest_rate = 0.06
+        mortgage_interest_rate = 6.00
+print(f"Interest rate for the term will be {mortgage_interest_rate:,.2f}%")
 
-# Morgage Payment Calculations
-print(mortgage_interest_rate)
+# Morgage Payment Amount
 monthly_rate = ((1 + (mortgage_interest_rate/2)) ** 2) ** (1/12) - 1
 monthly_payment = principal_amount*(monthly_rate*(1 + monthly_rate)**(mortgage_amortization_months))/((1 + monthly_rate)**(mortgage_amortization_months) - 1)
 
