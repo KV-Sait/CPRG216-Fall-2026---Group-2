@@ -35,9 +35,10 @@ elif purchase_price > 900000:
 min_down_payment_percent = float(min_down_payment / purchase_price) * 100
 
 # Input for down payment percentage
-down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): "))
-while down_payment_percent < min_down_payment_percent:
-    down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): "))
+down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent:.3f}): "))
+while down_payment_percent < min_down_payment_percent or down_payment_percent > 100:
+    print("Please enter a value between the minimum and 100")
+    down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent:.3f}): "))
 
 # Mortgage Default Insurance Component
 
@@ -57,9 +58,9 @@ insurance_cost = (purchase_price - down_payment) * mortgage_insurance_premium / 
 principal_amount = purchase_price - down_payment + insurance_cost
 
 # Print Calculations
-print(f"Down payment amount is ${down_payment}")
-print(f"Mortgage insurance price is ${insurance_cost}")
-print(f"Total mortgage amount is ${principal_amount}")
+print(f"Down payment amount is ${int(down_payment)}")
+print(f"Mortgage insurance price is ${int(insurance_cost)}")
+print(f"Total mortgage amount is ${int(principal_amount)}")
 
 # Morgage Payment Component
 
@@ -96,9 +97,10 @@ match(mortgage_term):
 print(f"Interest rate for the term will be {mortgage_interest_rate:,.2f}%")
 
 # Morgage Payment Amount
+mortgage_interest_rate_decimal = mortgage_interest_rate / 100 # Convert from percentage to decimal form
 num_monthly_payments = mortgage_amortization_period * 12
-effective_monthly_rate = ((1 + (mortgage_interest_rate/2)) ** 2) ** (1/12) - 1
-monthly_payment = principal_amount * (effective_monthly_rate * (1 + effective_monthly_rate) ** (num_monthly_payments)) / ((1 + effective_monthly_rate)**(num_monthly_payments) - 1)
+effective_monthly_rate = ((1 + (mortgage_interest_rate_decimal/2)) ** 2) ** (1/12) - 1
+monthly_payment = principal_amount * (effective_monthly_rate * (1 + effective_monthly_rate) ** num_monthly_payments) / ((1 + effective_monthly_rate) ** (num_monthly_payments) - 1)
 
 # Print Mortgage Payment Amount
-print(f"Monthly payment amount is: ${monthly_payment:,.2f}")
+print(f"Monthly payment amount is: ${monthly_payment:.2f}")
