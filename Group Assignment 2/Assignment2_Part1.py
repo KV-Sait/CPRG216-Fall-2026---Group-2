@@ -1,0 +1,104 @@
+'''
+File Name: Assignment2-Part1.py
+
+Group Members:
+Addison Lewandowski
+Russell Belmonte
+Jordan La
+Kenny Vo
+
+Assignment: Programming Strategies
+Part 1: Monthly Payment Calculator
+
+Started: 2026-10-26 | Finished: 2026-XX-XX
+'''
+
+# Minimum Down Payment Component
+
+# Variables and Constants
+mortgage_interest_rate = float()
+
+# Initial User Inputs
+client_name = str(input("Enter client name: "))
+address = str(input("Enter address of property: "))
+purchase_price = float(input("Enter purchase price: "))
+
+# Calculate minimum down payment
+if purchase_price <= 400000:
+    min_down_payment = 0.05 * purchase_price # Minimum Down Payment = 5%
+elif (400000 < purchase_price <= 900000):
+    min_down_payment = 20000 + (0.10 * (purchase_price - 400000)) # Minimum Down Payment = 5% of $400 000 (= $20 000) + 10% of the Remainder
+elif purchase_price > 900000:
+    min_down_payment = 0.20 * purchase_price # Minimum Down Payment = 20%
+
+# Calculate minimum down payment percentage
+min_down_payment_percent = float(min_down_payment / purchase_price) * 100
+
+# Input for down payment percentage
+down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): "))
+while down_payment_percent < min_down_payment_percent:
+    down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): "))
+
+# Mortgage Default Insurance Component
+
+# Required Mortgage Default Insurance
+if 5 <= down_payment_percent < 10:
+    mortgage_insurance_premium = 5
+elif 10 <= down_payment_percent < 15:
+    mortgage_insurance_premium = 4
+elif 15 <= down_payment_percent < 20:
+    mortgage_insurance_premium = 3
+else:
+    mortgage_insurance_premium = 0
+
+# Recalculate
+down_payment = purchase_price * down_payment_percent / 100
+insurance_cost = (purchase_price - down_payment) * mortgage_insurance_premium / 100
+principal_amount = purchase_price - down_payment + insurance_cost
+
+# Print Calculations
+print(f"Down payment amount is ${down_payment}")
+print(f"Mortgage insurance price is ${insurance_cost}")
+print(f"Total mortgage amount is ${principal_amount}")
+
+# Morgage Payment Component
+
+# List Allowed Values
+mortgage_term_allowed = [1, 2, 3, 5, 10]
+mortgage_amortization_allowed = [5, 10, 15, 20, 25]
+
+#Input mortgage term
+mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
+while mortgage_term not in mortgage_term_allowed:
+    print("Please enter a valid choice")
+    mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
+
+# Input mortgage amortization period
+mortgage_amortization_period = int(input("Enter mortgage amortization period (5, 10, 15, 20, 25): "))
+while mortgage_term not in mortgage_term_allowed:
+    print("Please enter a valid choice")
+    mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
+
+# Mortgage Interest Rate
+match(mortgage_term):
+    case 1:
+        mortgage_interest_rate = 5.90
+    case 2:
+        mortgage_interest_rate = 5.80
+    case 3:
+        mortgage_interest_rate = 5.50
+    case 5:
+        mortgage_interest_rate = 5.30
+    case 10:
+        mortgage_interest_rate = 6.00
+
+# Print Mortgage Interest Rate
+print(f"Interest rate for the term will be {mortgage_interest_rate:,.2f}%")
+
+# Morgage Payment Amount
+num_monthly_payments = mortgage_amortization_period * 12
+effective_monthly_rate = ((1 + (mortgage_interest_rate/2)) ** 2) ** (1/12) - 1
+monthly_payment = principal_amount * (effective_monthly_rate * (1 + effective_monthly_rate) ** (num_monthly_payments)) / ((1 + effective_monthly_rate)**(num_monthly_payments) - 1)
+
+# Print Mortgage Payment Amount
+print(f"Monthly payment amount is: ${monthly_payment:,.2f}")
