@@ -35,9 +35,15 @@ elif purchase_price > 900000:
 min_down_payment_percent = float(min_down_payment / purchase_price) * 100
 
 # Input for down payment percentage
-down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): "))
-while down_payment_percent < min_down_payment_percent:
+if min_down_payment_percent == 5 or min_down_payment_percent == 20:
+    down_payment_percent = float(input(f"Enter down payment percentage (minimum {int(min_down_payment_percent)}): "))
+else:
     down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): "))
+while down_payment_percent < min_down_payment_percent:
+    if min_down_payment_percent == 5 or min_down_payment_percent == 20:
+        down_payment_percent = float(input(f"Enter down payment percentage (minimum {int(min_down_payment_percent)}): "))
+    else:
+        down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): "))
 
 # Mortgage Default Insurance Component
 
