@@ -57,9 +57,9 @@ insurance_cost = (purchase_price - down_payment) * mortgage_insurance_premium / 
 principal_amount = purchase_price - down_payment + insurance_cost
 
 # Print Calculations
-print(f"Down payment amount is ${down_payment}")
-print(f"Mortgage insurance price is ${insurance_cost}")
-print(f"Total mortgage amount is ${principal_amount}")
+print(f"Down payment amount is ${int(down_payment)}")
+print(f"Mortgage insurance price is ${int(insurance_cost)}")
+print(f"Total mortgage amount is ${int(principal_amount)}")
 
 # Morgage Payment Component
 
