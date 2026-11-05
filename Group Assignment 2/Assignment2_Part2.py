@@ -1,5 +1,5 @@
 '''
-File Name: Assignment2-Part1.py
+File Name: Assignment2-Part2.py
 
 Group Members:
 Addison Lewandowski
@@ -8,7 +8,7 @@ Jordan La
 Kenny Vo
 
 Assignment: Programming Strategies
-Part 1: Monthly Payment Calculator
+Part 2: The Amortization Schedule
 
 Started: 2026-10-26 | Finished: 2026-XX-XX
 '''
