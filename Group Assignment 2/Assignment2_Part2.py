@@ -109,3 +109,27 @@ monthly_payment = principal_amount * ((effective_monthly_rate * ((1 + effective_
 # Print Mortgage Payment Amount
 
 print(f"Monthly payment amount is: ${monthly_payment:.2f}")
+
+'''
+
+Part 2 Task List:
+Monthly Interest = Opening Balance at the start of the month * EMR (see above)
+Monthly Principle Amount = Monthly Payment (see above) - Monthly interest amount
+Closing Balance = Opening Balance - Monthly Principle
+
+Other Requirements:
+Validate three user inputs:
+- Down Payment must be between the minimum on Table 1 and 100
+- Mortgage Term must be values allowed on Table 3
+- Amortization period must be one of the values on Table 4
+  - Re-prompt them to try again
+- Does not need validation of input's data type
+When calculating the in-between down payment (Table 1 thing), round the percentage to 3 decimal places.
+
+Formatting Requirements (Says tips on the doc, but they should be done):
+- Good variables
+- Use f-strings (variables, whitespace, columns, limiting characters)
+- Use Constants (TODO: Not done, guaranteed)
+- Use compound data types
+
+'''
