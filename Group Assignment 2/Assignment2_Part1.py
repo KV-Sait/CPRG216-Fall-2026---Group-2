@@ -93,7 +93,7 @@ match(mortgage_term):
         mortgage_interest_rate = 6.00
 
 # Print Mortgage Interest Rate
-print(f"Interest rate for the term will be {mortgage_interest_rate:,.2f}%")
+print(f"Interest rate for the term will be {mortgage_interest_rate:.2f}%")
 
 # Morgage Payment Amount
 num_monthly_payments = mortgage_amortization_period * 12
@@ -102,4 +102,4 @@ monthly_payment = principal_amount * ((effective_monthly_rate * ((1 + effective_
 
 # Print Mortgage Payment Amount
 
-print(f"Monthly payment amount is: ${monthly_payment:,.2f}")
+print(f"Monthly payment amount is: ${monthly_payment:.2f}")
