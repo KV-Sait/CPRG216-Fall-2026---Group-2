@@ -16,7 +16,8 @@ Started: 2026-10-26 | Finished: 2026-XX-XX
 # Minimum Down Payment Component
 
 # Variables and Constants
-mortgage_interest_rate = float()
+MORTGAGE_TERM_ALLOWED = (1, 2, 3, 5, 10)
+MORTAGE_AMORTIZATION_ALLOWED = (5, 10, 15, 20, 25)
 
 # Initial User Inputs
 client_name = str(input("Enter client name: "))
@@ -64,18 +65,17 @@ print(f"Total mortgage amount is ${int(principal_amount)}")
 
 # Morgage Payment Component
 
-#Input mortgage term (Constants)
-MORTGAGE_TERM_ALLOWED = (1, 2, 3, 5, 10)
+# Input mortgage term
 
 mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
 while mortgage_term not in MORTGAGE_TERM_ALLOWED:
     print("Please enter a valid choice")
     mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
 
-# Input mortgage amortization period (list)
-mortgage_amortization_allowed = [5, 10, 15, 20, 25]
+# Input mortgage amortization period
+
 mortgage_amortization_period = int(input("Enter mortgage amortization period (5, 10, 15, 20, 25): "))
-while mortgage_amortization_period not in mortgage_amortization_allowed:
+while mortgage_amortization_period not in MORTAGE_AMORTIZATION_ALLOWED:
     print("Please enter a valid choice")
     mortgage_amortization_period = int(input("Enter mortgage amortization period (5, 10, 15, 20, 25): "))
 
