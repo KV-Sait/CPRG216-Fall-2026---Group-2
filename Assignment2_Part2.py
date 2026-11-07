@@ -102,7 +102,6 @@ match(mortgage_term):
 print(f"Interest rate for the term will be {mortgage_interest_rate:.2f}%")
 
 # Morgage Payment Amount
-balance = principal_amount
 num_monthly_payments = mortgage_amortization_period * 12
 effective_monthly_rate = ((1 + (mortgage_interest_rate/2 * 0.01)) ** 2) ** (1/12) - 1
 monthly_payment = principal_amount * ((effective_monthly_rate * ((1 + effective_monthly_rate) ** num_monthly_payments)) / (((1 + effective_monthly_rate) ** num_monthly_payments) - 1))
@@ -120,6 +119,7 @@ if schedule.upper() == 'y' or schedule.upper() == 'Y':
     print(f'{"Month":>10}{"Opening Bal":>18}{"Payment":>15}{"Principal":>15}{"Interest":>15}{"Closing Bal":>18}')
 
     amortization_schedule = []
+    balance = principal_amount
 
     # Calculate Amortization Schedule
     for month in range (1, mortgage_term * 12 + 1):
