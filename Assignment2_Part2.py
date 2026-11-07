@@ -19,9 +19,9 @@ Started: 2026-10-26 | Finished: 2026-XX-XX
 mortgage_interest_rate = float()
 
 # Initial User Inputs
-client_name = str(input("Enter client name: \033[1;4m"))
-address = str(input("\033[0mEnter address of property: \033[1;4m"))
-purchase_price = float(input("\033[0mEnter purchase price: \033[1;4m"))
+client_name = str(input("Enter client name: "))
+address = str(input("Enter address of property: "))
+purchase_price = float(input("Enter purchase price: "))
 
 # Calculate minimum down payment
 if purchase_price <= 400000:
@@ -35,10 +35,10 @@ elif purchase_price > 900000:
 min_down_payment_percent = float(min_down_payment / purchase_price) * 100
 
 # Input for down payment percentage
-down_payment_percent = float(input(f"\033[0mEnter down payment percentage (minimum {min_down_payment_percent:.3f}): \033[1;4m"))
+down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent:.3f}): "))
 while down_payment_percent < min_down_payment_percent or down_payment_percent > 100:
-    print(f"\033[0mPlease enter a value between the minimum and 100")
-    down_payment_percent = float(input(f"\033[0mEnter down payment percentage (minimum {min_down_payment_percent:.3f}): \033[1;4m"))
+    print(f"Please enter a value between the minimum and 100")
+    down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent:.3f}): "))
 
 # Mortgage Default Insurance Component
 
@@ -58,7 +58,7 @@ insurance_cost = (purchase_price - down_payment) * mortgage_insurance_premium / 
 principal_amount = purchase_price - down_payment + insurance_cost
 
 # Print Calculations
-print(f"\033[0mDown payment amount is ${int(down_payment)}")
+print(f"Down payment amount is ${int(down_payment)}")
 print(f"Mortgage insurance price is ${int(insurance_cost)}")
 print(f"Total mortgage amount is ${int(principal_amount)}")
 
@@ -67,17 +67,17 @@ print(f"Total mortgage amount is ${int(principal_amount)}")
 #Input mortgage term (Constants)
 MORTGAGE_TERM_ALLOWED = (1, 2, 3, 5, 10)
 
-mortgage_term = int(input("\033[0mEnter Mortgage Term (1, 2, 3, 5, 10): \033[1;4m"))
+mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
 while mortgage_term not in MORTGAGE_TERM_ALLOWED:
-    print("\033[0mPlease enter a valid choice")
-    mortgage_term = int(input("\033[0mEnter Mortgage Term (1, 2, 3, 5, 10): \033[1;4m"))
+    print("Please enter a valid choice")
+    mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
 
 # Input mortgage amortization period (list)
 mortgage_amortization_allowed = [5, 10, 15, 20, 25]
-mortgage_amortization_period = int(input("\033[0mEnter mortgage amortization period (5, 10, 15, 20, 25): \033[1;4m"))
+mortgage_amortization_period = int(input("Enter mortgage amortization period (5, 10, 15, 20, 25): "))
 while mortgage_amortization_period not in mortgage_amortization_allowed:
-    print("\033[0mPlease enter a valid choice")
-    mortgage_amortization_period = int(input("\033[0mEnter mortgage amortization period (5, 10, 15, 20, 25): \033[1;4m"))
+    print("Please enter a valid choice")
+    mortgage_amortization_period = int(input("Enter mortgage amortization period (5, 10, 15, 20, 25): "))
 
 # Mortgage Interest Rate
 match(mortgage_term):
@@ -93,7 +93,7 @@ match(mortgage_term):
         mortgage_interest_rate = 6.00
 
 # Print Mortgage Interest Rate
-print(f"\033[0mInterest rate for the term will be {mortgage_interest_rate:.2f}%")
+print(f"Interest rate for the term will be {mortgage_interest_rate:.2f}%")
 
 # Morgage Payment Amount
 balance = principal_amount
@@ -108,9 +108,9 @@ print(f"Monthly payment amount is: ${monthly_payment:.2f}")
 #Part 2
 
 #Amortization schedule
-schedule = input('\033[0mWould you like to see the amortization schedule? (Y/N): \033[1;4m')
+schedule = input('Would you like to see the amortization schedule? (Y/N): ')
 if schedule.upper() == 'y' or schedule.upper() == 'Y':
-    print(f'\033[0m{"Monthly Amortization Schedule":^95}\n')
+    print(f'{"Monthly Amortization Schedule":^95}\n')
     print(f'{"Month":>10}{"Opening Bal":>18}{"Payment":>15}{"Principal":>15}{"Interest":>15}{"Closing Bal":>18}')
 
     amortization_schedule = []
