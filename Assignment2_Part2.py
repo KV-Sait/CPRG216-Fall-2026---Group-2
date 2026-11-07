@@ -115,8 +115,8 @@ print(f"Monthly payment amount is: ${monthly_payment:.2f}")
 # Amortization schedule
 schedule = input('Would you like to see the amortization schedule? (Y/N): ')
 if schedule.upper() == 'Y':
-    print(f'{"Monthly Amortization Schedule":^95}\n')
-    print(f'{"Month":>10}{"Opening Bal":>18}{"Payment":>15}{"Principal":>15}{"Interest":>15}{"Closing Bal":>18}')
+    print(f'{"Monthly Amortization Schedule":^84}\n')
+    print(f'{"Month"}{"Opening Bal":>16}{"Payment":>16}{"Principal":>16}{"Interest":>16}{"Closing Bal":>16}')
 
     amortization_schedule = []
     balance = principal_amount
@@ -152,12 +152,12 @@ if schedule.upper() == 'Y':
     
     # Print Amortization Schedule
     for data in amortization_schedule:
-        print(f'{data["Month"]:>10}{data["Opening Bal"]:>18.2f}{data["Payment"]:>15.2f}{data["Principal"]:>15.2f}{data["Interest"]:>15.2f}{data["Closing Bal"]:>18.2f}')
+        print(f'{data["Month"]:>5}{data["Opening Bal"]:>16.2f}{data["Payment"]:>16.2f}{data["Principal"]:>16.2f}{data["Interest"]:>16.2f}{data["Closing Bal"]:>16.2f}')
 
     total_principal =sum(data["Principal"] for data in amortization_schedule)
     total_interest = sum(data["Interest"] for data in amortization_schedule)
-    print("=" * 91)
-    print(f"{'Total':<43}{total_principal:>15.2f}{total_interest:>15.2f}")
+    print("=====================================================================================")
+    print(f"{'Total':<37}{total_principal:>16.2f}{total_interest:>16.2f}")
 
 
 
