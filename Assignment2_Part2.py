@@ -113,7 +113,7 @@ print(f"Monthly payment amount is: ${monthly_payment:.2f}")
 
 #Part 2
 
-#Amortization schedule
+# Amortization schedule
 schedule = input('Would you like to see the amortization schedule? (Y/N): ')
 if schedule.upper() == 'y' or schedule.upper() == 'Y':
     print(f'{"Monthly Amortization Schedule":^95}\n')
@@ -121,22 +121,22 @@ if schedule.upper() == 'y' or schedule.upper() == 'Y':
 
     amortization_schedule = []
 
-    #calculate amortization schedule
+    # Calculate Amortization Schedule
     for month in range (1, mortgage_term * 12 + 1):
 
-        #get balance
+        # Get balance
         opening_balance = balance
         
-        #calculate monthly interest
+        # Calculate Monthly Interest
         monthly_interest = opening_balance * effective_monthly_rate
 
-        #calculate monthly principal
+        # Calculate Monthly Principal
         monthly_principal = monthly_payment - monthly_interest
 
-        #calculate closing balance
+        # Calculate Closing Balance
         closing_balance = opening_balance - monthly_principal
 
-        #amortization schedule dictionary
+        # Amortization Schedule Dictionary
         monthly_amortization = {
             "Month": month,
             "Opening Bal": opening_balance,
@@ -145,12 +145,12 @@ if schedule.upper() == 'y' or schedule.upper() == 'Y':
             "Interest": monthly_interest,
             "Closing Bal": closing_balance
         }
-        #get balance for the next month
+        # Get Balance for Next Month
         balance = closing_balance
 
         amortization_schedule.append(monthly_amortization)
     
-    #print amortization schedule
+    # Print Amortization Schedule
     for data in amortization_schedule:
         print(f'{data["Month"]:>10}{data["Opening Bal"]:>18.2f}{data["Payment"]:>15.2f}{data["Principal"]:>15.2f}{data["Interest"]:>15.2f}{data["Closing Bal"]:>18.2f}')
 
