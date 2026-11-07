@@ -16,7 +16,8 @@ Started: 2026-10-26 | Finished: 2026-XX-XX
 # Minimum Down Payment Component
 
 # Variables and Constants
-mortgage_interest_rate = float()
+MORTGAGE_TERM_ALLOWED = (1, 2, 3, 5, 10)
+MORTAGE_AMORTIZATION_ALLOWED = (5, 10, 15, 20, 25)
 
 # Initial User Inputs
 client_name = str(input("Enter client name: "))
@@ -38,12 +39,13 @@ min_down_payment_percent = float(min_down_payment / purchase_price) * 100
 if min_down_payment_percent == 5 or min_down_payment_percent == 20:
     down_payment_percent = float(input(f"Enter down payment percentage (minimum {int(min_down_payment_percent)}): "))
 else:
-    down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): "))
-while down_payment_percent < min_down_payment_percent:
+    down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent:.3f}): "))
+while down_payment_percent < min_down_payment_percent or down_payment_percent > 100:
+    print(f"Please enter a value between the minimum and 100")
     if min_down_payment_percent == 5 or min_down_payment_percent == 20:
         down_payment_percent = float(input(f"Enter down payment percentage (minimum {int(min_down_payment_percent)}): "))
     else:
-        down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent}): "))
+        down_payment_percent = float(input(f"Enter down payment percentage (minimum {min_down_payment_percent:.3f}): "))
 
 # Mortgage Default Insurance Component
 
@@ -69,21 +71,19 @@ print(f"Total mortgage amount is ${int(principal_amount)}")
 
 # Morgage Payment Component
 
-# List Allowed Values
-mortgage_term_allowed = [1, 2, 3, 5, 10]
-mortgage_amortization_allowed = [5, 10, 15, 20, 25]
+# Input mortgage term
 
-#Input mortgage term
 mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
-while mortgage_term not in mortgage_term_allowed:
+while mortgage_term not in MORTGAGE_TERM_ALLOWED:
     print("Please enter a valid choice")
     mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
 
 # Input mortgage amortization period
+
 mortgage_amortization_period = int(input("Enter mortgage amortization period (5, 10, 15, 20, 25): "))
-while mortgage_term not in mortgage_term_allowed:
+while mortgage_amortization_period not in MORTAGE_AMORTIZATION_ALLOWED:
     print("Please enter a valid choice")
-    mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
+    mortgage_amortization_period = int(input("Enter mortgage amortization period (5, 10, 15, 20, 25): "))
 
 # Mortgage Interest Rate
 match(mortgage_term):
@@ -110,6 +110,57 @@ monthly_payment = principal_amount * ((effective_monthly_rate * ((1 + effective_
 
 print(f"Monthly payment amount is: ${monthly_payment:.2f}")
 
+# Part 2
+
+# Amortization schedule
+schedule = input('Would you like to see the amortization schedule? (Y/N): ')
+if schedule.upper() == 'Y':
+    print(f'{"Monthly Amortization Schedule":^84}\n')
+    print(f'{"Month"}{"Opening Bal":>16}{"Payment":>16}{"Principal":>16}{"Interest":>16}{"Closing Bal":>16}')
+
+    amortization_schedule = []
+    balance = principal_amount
+
+    # Calculate Amortization Schedule
+    for month in range (1, mortgage_term * 12 + 1):
+
+        # Get balance
+        opening_balance = balance
+        
+        # Calculate Monthly Interest
+        monthly_interest = opening_balance * effective_monthly_rate
+
+        # Calculate Monthly Principal
+        monthly_principal = monthly_payment - monthly_interest
+
+        # Calculate Closing Balance
+        closing_balance = opening_balance - monthly_principal
+
+        # Amortization Schedule Dictionary
+        monthly_amortization = {
+            "Month": month,
+            "Opening Bal": opening_balance,
+            "Payment": monthly_payment,
+            "Principal": monthly_principal,
+            "Interest": monthly_interest,
+            "Closing Bal": closing_balance
+        }
+        # Get Balance for Next Month
+        balance = closing_balance
+
+        amortization_schedule.append(monthly_amortization)
+    
+    # Print Amortization Schedule
+    for data in amortization_schedule:
+        print(f'{data["Month"]:>5}{data["Opening Bal"]:>16.2f}{data["Payment"]:>16.2f}{data["Principal"]:>16.2f}{data["Interest"]:>16.2f}{data["Closing Bal"]:>16.2f}')
+
+    total_principal =sum(data["Principal"] for data in amortization_schedule)
+    total_interest = sum(data["Interest"] for data in amortization_schedule)
+    print("=====================================================================================")
+    print(f"{'Total':<37}{total_principal:>16.2f}{total_interest:>16.2f}")
+
+
+
 '''
 
 Part 2 Task List:
@@ -128,8 +179,8 @@ When calculating the in-between down payment (Table 1 thing), round the percenta
 
 Formatting Requirements (Says tips on the doc, but they should be done):
 - Good variables
-- Use f-strings (variables, whitespace, columns, limiting characters)
-- Use Constants (TODO: Not done, guaranteed)
-- Use compound data types
+- Use f-strings (variables, whitespace, columns, limiting characters) ----Part 2: Amortization Schedule
+- Use Constants (TODO: Not done, guaranteed) --- lines 67-73
+- Use compound data types   ---- line 138-150
 
 '''
