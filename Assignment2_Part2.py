@@ -110,11 +110,11 @@ monthly_payment = principal_amount * ((effective_monthly_rate * ((1 + effective_
 
 print(f"Monthly payment amount is: ${monthly_payment:.2f}")
 
-#Part 2
+# Part 2
 
 # Amortization schedule
 schedule = input('Would you like to see the amortization schedule? (Y/N): ')
-if schedule.upper() == 'y' or schedule.upper() == 'Y':
+if schedule.upper() == 'Y':
     print(f'{"Monthly Amortization Schedule":^95}\n')
     print(f'{"Month":>10}{"Opening Bal":>18}{"Payment":>15}{"Principal":>15}{"Interest":>15}{"Closing Bal":>18}')
 
