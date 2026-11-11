@@ -1,10 +1,16 @@
 '''
 
-File Name: Assignment2-Part2.py Started: 2026-10-26 | Finished: 2026-11-11
+File Name: Assignment2-Part2.py 
+Started: 2026-10-26 | Finished: 2026-11-11
 
-Group Members: Addison Lewandowski Russell Belmonte Jordan La Kenny Vo
+Group Members: 
+    Addison Lewandowski 
+    Russell Belmonte 
+    Jordan La 
+    Kenny Vo
 
-Assignment: Programming Strategies Part 2: The Amortization Schedule
+Assignment: Programming Strategies 
+Part 2: The Amortization Schedule
 
 Program Description: The purpose of this program is to calculate monthly
 mortgage payments and produce an amortization schedule for selected mortgage
