@@ -1,5 +1,6 @@
 '''
 File Name: Assignment2-Part2.py
+Started: 2026-10-26 | Finished: 2026-11-11
 
 Group Members:
 Addison Lewandowski
@@ -10,7 +11,9 @@ Kenny Vo
 Assignment: Programming Strategies
 Part 2: The Amortization Schedule
 
-Started: 2026-10-26 | Finished: 2026-XX-XX
+Program Description: 
+
+
 '''
 
 # Minimum Down Payment Component
@@ -164,7 +167,6 @@ if schedule.upper() == 'Y':
 '''
 
 Other Requirements:
-When calculating the in-between down payment (Table 1 thing), round the percentage to 3 decimal places.
 
 Formatting Requirements (Says tips on the doc, but they should be done):
 - Good variables

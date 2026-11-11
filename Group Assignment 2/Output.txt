@@ -1,0 +1,208 @@
+Sample Run #1
+
+Enter client name: Maria Smith
+Enter address of property: 20 ABC Close
+Enter purchase price: 315000
+Enter down payment percentage (minimum 5): 10
+Down payment amount is $31500
+Mortgage insurance price is $11340
+Total mortgage amount is $294840
+Enter Mortgage Term (1, 2, 3, 5, 10): 1
+Enter mortgage amortization period (5, 10, 15, 20, 25): 20
+Interest rate for the term will be 5.90%
+Monthly payment amount is: $2083.30
+Would you like to see the amortization schedule? (Y/N): Y
+                           Monthly Amortization Schedule                            
+
+Month     Opening Bal         Payment       Principal        Interest     Closing Bal
+    1       294840.00         2083.30          651.18         1432.13       294188.82
+    2       294188.82         2083.30          654.34         1428.96       293534.49
+    3       293534.49         2083.30          657.52         1425.79       292876.97
+    4       292876.97         2083.30          660.71         1422.59       292216.26
+    5       292216.26         2083.30          663.92         1419.38       291552.34
+    6       291552.34         2083.30          667.14         1416.16       290885.19
+    7       290885.19         2083.30          670.39         1412.92       290214.81
+    8       290214.81         2083.30          673.64         1409.66       289541.17
+    9       289541.17         2083.30          676.91         1406.39       288864.25
+   10       288864.25         2083.30          680.20         1403.10       288184.05
+   11       288184.05         2083.30          683.51         1399.80       287500.54
+   12       287500.54         2083.30          686.83         1396.48       286813.72
+=====================================================================================
+Total                                         8026.28        16973.34
+PS C:\Users\dracy\Desktop\SAIT Fall 2026\OOP 1 (CPRG-216-ITC)\GroupLabs\Assignment2>
+
+
+
+Sample Run #2
+
+Enter client name: John Mike
+Enter address of property: 2000 XYZ DR
+Enter purchase price: 500500
+Enter down payment percentage (minimum 6.004): 5
+Please enter a value between the minimum and 100
+Enter down payment percentage (minimum 6.004): 101.5
+Please enter a value between the minimum and 100
+Enter down payment percentage (minimum 6.004): 6.004
+Down payment amount is $30050
+Mortgage insurance price is $23522
+Total mortgage amount is $493972
+Enter Mortgage Term (1, 2, 3, 5, 10): 10
+Enter mortgage amortization period (5, 10, 15, 20, 25): 25
+Interest rate for the term will be 6.00%
+Monthly payment amount is: $3160.47
+Would you like to see the amortization schedule? (Y/N): n
+PS C:\Users\dracy\Desktop\SAIT Fall 2026\OOP 1 (CPRG-216-ITC)\GroupLabs\Assignment2> 
+
+
+
+Sample Run #3
+
+Enter client name: Lisa Smith
+Enter address of property: 90 KLM St.
+Enter purchase price: 670000
+Enter down payment percentage (minimum 7.015): 30
+Down payment amount is $201000
+Mortgage insurance price is $0
+Total mortgage amount is $469000
+Enter Mortgage Term (1, 2, 3, 5, 10): 5
+Enter mortgage amortization period (5, 10, 15, 20, 25): 5
+Interest rate for the term will be 5.30%
+Monthly payment amount is: $8902.79
+Would you like to see the amortization schedule? (Y/N): Y
+                           Monthly Amortization Schedule                            
+
+Month     Opening Bal         Payment       Principal        Interest     Closing Bal
+    1       469000.00         8902.79         6853.88         2048.91       462146.12
+    2       462146.12         8902.79         6883.82         2018.97       455262.30
+    3       455262.30         8902.79         6913.90         1988.89       448348.40
+    4       448348.40         8902.79         6944.10         1958.69       441404.30
+    5       441404.30         8902.79         6974.44         1928.35       434429.86
+    6       434429.86         8902.79         7004.91         1897.88       427424.95
+    7       427424.95         8902.79         7035.51         1867.28       420389.44
+    8       420389.44         8902.79         7066.24         1836.54       413323.20
+    9       413323.20         8902.79         7097.11         1805.67       406226.08
+   10       406226.08         8902.79         7128.12         1774.67       399097.96
+   11       399097.96         8902.79         7159.26         1743.53       391938.70
+   12       391938.70         8902.79         7190.54         1712.25       384748.17
+   13       384748.17         8902.79         7221.95         1680.84       377526.22
+   14       377526.22         8902.79         7253.50         1649.29       370272.72
+   15       370272.72         8902.79         7285.19         1617.60       362987.53
+   16       362987.53         8902.79         7317.02         1585.77       355670.51
+   17       355670.51         8902.79         7348.98         1553.81       348321.53
+   18       348321.53         8902.79         7381.09         1521.70       340940.45
+   19       340940.45         8902.79         7413.33         1489.46       333527.12
+   20       333527.12         8902.79         7445.72         1457.07       326081.40
+   21       326081.40         8902.79         7478.25         1424.54       318603.15
+   22       318603.15         8902.79         7510.92         1391.87       311092.24
+   23       311092.24         8902.79         7543.73         1359.06       303548.51
+   24       303548.51         8902.79         7576.68         1326.10       295971.82
+   25       295971.82         8902.79         7609.78         1293.00       288362.04
+   26       288362.04         8902.79         7643.03         1259.76       280719.01
+   27       280719.01         8902.79         7676.42         1226.37       273042.59
+   28       273042.59         8902.79         7709.96         1192.83       265332.63
+   29       265332.63         8902.79         7743.64         1159.15       257589.00
+   30       257589.00         8902.79         7777.47         1125.32       249811.53
+   31       249811.53         8902.79         7811.44         1091.35       242000.08
+   32       242000.08         8902.79         7845.57         1057.22       234154.51
+   33       234154.51         8902.79         7879.84         1022.94       226274.67
+   34       226274.67         8902.79         7914.27          988.52       218360.40
+   35       218360.40         8902.79         7948.84          953.95       210411.56
+   36       210411.56         8902.79         7983.57          919.22       202427.99
+   37       202427.99         8902.79         8018.45          884.34       194409.54
+   38       194409.54         8902.79         8053.48          849.31       186356.06
+   39       186356.06         8902.79         8088.66          814.13       178267.40
+   40       178267.40         8902.79         8124.00          778.79       170143.40
+   41       170143.40         8902.79         8159.49          743.30       161983.92
+   42       161983.92         8902.79         8195.13          707.66       153788.78
+   43       153788.78         8902.79         8230.94          671.85       145557.85
+   44       145557.85         8902.79         8266.89          635.89       137290.95
+   45       137290.95         8902.79         8303.01          599.78       128987.94
+   46       128987.94         8902.79         8339.28          563.51       120648.66
+   47       120648.66         8902.79         8375.71          527.07       112272.94
+   48       112272.94         8902.79         8412.31          490.48       103860.64
+   49       103860.64         8902.79         8449.06          453.73        95411.58
+   50        95411.58         8902.79         8485.97          416.82        86925.61
+   51        86925.61         8902.79         8523.04          379.75        78402.57
+   52        78402.57         8902.79         8560.27          342.52        69842.30
+   53        69842.30         8902.79         8597.67          305.12        61244.63
+   54        61244.63         8902.79         8635.23          267.56        52609.40
+   55        52609.40         8902.79         8672.96          229.83        43936.44
+   56        43936.44         8902.79         8710.85          191.94        35225.60
+   57        35225.60         8902.79         8748.90          153.89        26476.70
+   58        26476.70         8902.79         8787.12          115.67        17689.57
+   59        17689.57         8902.79         8825.51           77.28         8864.07
+   60         8864.07         8902.79         8864.07           38.72           -0.00
+=====================================================================================
+Total                                       469000.00        65167.37
+PS C:\Users\dracy\Desktop\SAIT Fall 2026\OOP 1 (CPRG-216-ITC)\GroupLabs\Assignment2> 
+
+
+
+Sample Run #4
+
+Enter client name: Angle Miracle
+Enter address of property: 3000 Rocky Mountain BLVD
+Enter purchase price: 999999
+Enter down payment percentage (minimum 20): 25
+Down payment amount is $250000
+Mortgage insurance price is $0
+Total mortgage amount is $749999
+Enter Mortgage Term (1, 2, 3, 5, 10): 3
+Enter mortgage amortization period (5, 10, 15, 20, 25): 17
+Please enter a valid choice
+Enter mortgage amortization period (5, 10, 15, 20, 25): 15
+Interest rate for the term will be 5.50%
+Monthly payment amount is: $6103.48
+Would you like to see the amortization schedule? (Y/N): N
+PS C:\Users\dracy\Desktop\SAIT Fall 2026\OOP 1 (CPRG-216-ITC)\GroupLabs\Assignment2> 
+
+
+
+Sample Run #5
+
+Enter client name: H. I.  Madien
+Enter address of property: 170 International Road
+Enter purchase price: 1420000
+Enter down payment percentage (minimum 20): 20
+Down payment amount is $284000
+Mortgage insurance price is $0
+Total mortgage amount is $1136000
+Enter Mortgage Term (1, 2, 3, 5, 10): 22
+Please enter a valid choice
+Enter Mortgage Term (1, 2, 3, 5, 10): 2
+Enter mortgage amortization period (5, 10, 15, 20, 25): 10
+Interest rate for the term will be 5.80%
+Monthly payment amount is: $12459.09
+Would you like to see the amortization schedule? (Y/N): y
+                           Monthly Amortization Schedule                            
+
+Month     Opening Bal         Payment       Principal        Interest     Closing Bal
+    1      1136000.00        12459.09         7033.62         5425.47      1128966.38
+    2      1128966.38        12459.09         7067.21         5391.88      1121899.16
+    3      1121899.16        12459.09         7100.97         5358.13      1114798.20
+    4      1114798.20        12459.09         7134.88         5324.21      1107663.32
+    5      1107663.32        12459.09         7168.96         5290.14      1100494.36
+    6      1100494.36        12459.09         7203.19         5255.90      1093291.17
+    7      1093291.17        12459.09         7237.60         5221.50      1086053.57
+    8      1086053.57        12459.09         7272.16         5186.93      1078781.41
+    9      1078781.41        12459.09         7306.89         5152.20      1071474.51
+   10      1071474.51        12459.09         7341.79         5117.30      1064132.72
+   11      1064132.72        12459.09         7376.86         5082.24      1056755.87
+   12      1056755.87        12459.09         7412.09         5047.01      1049343.78
+   13      1049343.78        12459.09         7447.49         5011.61      1041896.29
+   14      1041896.29        12459.09         7483.06         4976.04      1034413.24
+   15      1034413.24        12459.09         7518.79         4940.30      1026894.44
+   16      1026894.44        12459.09         7554.70         4904.39      1019339.74
+   17      1019339.74        12459.09         7590.78         4868.31      1011748.95
+   18      1011748.95        12459.09         7627.04         4832.06      1004121.92
+   19      1004121.92        12459.09         7663.46         4795.63       996458.45
+   20       996458.45        12459.09         7700.06         4759.03       988758.39
+   21       988758.39        12459.09         7736.84         4722.26       981021.55
+   22       981021.55        12459.09         7773.79         4685.30       973247.76
+   23       973247.76        12459.09         7810.92         4648.18       965436.84
+   24       965436.84        12459.09         7848.22         4610.87       957588.62
+=====================================================================================
+Total                                       178411.38       120606.90
+PS C:\Users\dracy\Desktop\SAIT Fall 2026\OOP 1 (CPRG-216-ITC)\GroupLabs\Assignment2> 
+
+
