@@ -1,18 +1,56 @@
 '''
-File Name: Assignment2-Part2.py
-Started: 2026-10-26 | Finished: 2026-11-11
 
-Group Members:
-Addison Lewandowski
-Russell Belmonte
-Jordan La
-Kenny Vo
+File Name: Assignment2-Part2.py Started: 2026-10-26 | Finished: 2026-11-11
 
-Assignment: Programming Strategies
-Part 2: The Amortization Schedule
+Group Members: Addison Lewandowski Russell Belmonte Jordan La Kenny Vo
 
-Program Description: 
+Assignment: Programming Strategies Part 2: The Amortization Schedule
 
+Program Description: The purpose of this program is to calculate monthly
+mortgage payments and produce an amortization schedule for selected mortgage
+terms. The program description will be split into two parts for better
+readability.
+
+Part 1: When running the program it asks for the clients name, their address and
+the purchase price of the property as inputs. It calculates the minimum down
+payment price by applying a percentage to the purchase price values depending on
+the range that the purchase price value falls into. Following this the program
+will calculate the minimum down payment percentage using the minimum down
+payment and the purchase price. It then asks the user to input a down payment
+percentage. The program will continue to ask the user for a valid down payment
+percentage if they input a value less than the minimum down payment percentage
+or a value greater than 100 percent. A message will also be displayed to the
+user to reflect an invalid input. After receiving a valid down payment
+percentage the program will calculate the mortgage insurance premium based where
+the inputted down payment percent falls in a given set of ranges. Furthermore,
+the program will calculate values for down payment, insurance cost and principal
+amount displaying them as rounded values. The program will then ask for a valid
+mortgage term where the input value has to be a value part of the tuple called
+allowed mortgage values. Otherwise it will display the message please enter a
+valid choice and continue to ask the user for a valid input. Next the program
+will get the mortgage amortization period input using the same logic as used in
+getting the mortgage term input. Then the program will use a match statement
+using the mortgage term to determine the mortgage interest rate displaying the
+value to 2 decimal places. The program will then calculate the number of monthly
+payments and effective monthly rate (EMR) to find the monthly payment amount.
+One thing to note is that in the EMR calculation the program multiples mortgage
+interest rate divided by 2 by a factor of 0.01. This is to convert the interest
+rate from a percentage to a decimal value for calculation purposes. The program
+will then display the monthly payment amount to 2 decimal places. 
+
+Part 2: For the second part the program will ask the user if they want to see
+the amortization schedule. If the user inputs y or Y then the program will
+calculate the amortization schedule for the inputted number of mortgage terms.
+To do so it will calculate values for opening balance, monthly interest, monthly
+principal and closing balance, storing them as key value pairs into a dictionary
+called monthly amortization. This dictionary is then added to a list called
+amortization schedule. It will do this for each month up to the inputted
+mortgage term in months. After all the processing it will then iterate through
+the amortization schedule list accessing each dictionary and their respective
+keys and values to display the amortization schedule data in a table format. At
+the bottom of the table it will also display totals for the principal and
+interest. In the event that the user inputs n or N the program will stop and not
+display the amortization schedule.
 
 '''
 
@@ -76,10 +114,10 @@ print(f"Total mortgage amount is ${principal_amount:.0f}")
 
 # Input mortgage term
 
-mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
+mortgage_term = int(input("Enter mortgage term (1, 2, 3, 5, 10): "))
 while mortgage_term not in MORTGAGE_TERM_ALLOWED:
     print("Please enter a valid choice")
-    mortgage_term = int(input("Enter Mortgage Term (1, 2, 3, 5, 10): "))
+    mortgage_term = int(input("Enter mortgage term (1, 2, 3, 5, 10): "))
 
 # Input mortgage amortization period
 
@@ -104,9 +142,9 @@ match(mortgage_term):
 # Print Mortgage Interest Rate
 print(f"Interest rate for the term will be {mortgage_interest_rate:.2f}%")
 
-# Morgage Payment Amount
+# Mortgage Payment Amount
 num_monthly_payments = mortgage_amortization_period * 12
-effective_monthly_rate = ((1 + (mortgage_interest_rate/2 * 0.01)) ** 2) ** (1/12) - 1
+effective_monthly_rate = ((1 + (mortgage_interest_rate/2 * 0.01)) ** 2) ** (1/12) - 1 # Multiplication by 0.01 to convert percentage to decimal value
 monthly_payment = principal_amount * ((effective_monthly_rate * ((1 + effective_monthly_rate) ** num_monthly_payments)) / (((1 + effective_monthly_rate) ** num_monthly_payments) - 1))
 
 # Print Mortgage Payment Amount
@@ -161,14 +199,3 @@ if schedule.upper() == 'Y':
     total_interest = sum(data["Interest"] for data in amortization_schedule)
     print("=====================================================================================")
     print(f"{'Total':<37}{total_principal:>16.2f}{total_interest:>16.2f}")
-
-
-
-'''
-
-Other Requirements:
-
-Formatting Requirements (Says tips on the doc, but they should be done):
-- Good variables
-
-'''

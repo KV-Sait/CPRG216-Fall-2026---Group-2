@@ -7,7 +7,7 @@ Enter down payment percentage (minimum 5): 10
 Down payment amount is $31500
 Mortgage insurance price is $11340
 Total mortgage amount is $294840
-Enter Mortgage Term (1, 2, 3, 5, 10): 1
+Enter mortgage term (1, 2, 3, 5, 10): 1
 Enter mortgage amortization period (5, 10, 15, 20, 25): 20
 Interest rate for the term will be 5.90%
 Monthly payment amount is: $2083.30
@@ -29,7 +29,7 @@ Month     Opening Bal         Payment       Principal        Interest     Closin
    12       287500.54         2083.30          686.83         1396.48       286813.72
 =====================================================================================
 Total                                         8026.28        16973.34
-PS C:\Users\dracy\Desktop\SAIT Fall 2026\OOP 1 (CPRG-216-ITC)\GroupLabs\Assignment2>
+PS C:\Users\dracy\Desktop\SAIT Fall 2026\OOP 1 (CPRG-216-ITC)\GroupLabs\Assignment2> 
 
 
 
@@ -46,7 +46,7 @@ Enter down payment percentage (minimum 6.004): 6.004
 Down payment amount is $30050
 Mortgage insurance price is $23522
 Total mortgage amount is $493972
-Enter Mortgage Term (1, 2, 3, 5, 10): 10
+Enter mortgage term (1, 2, 3, 5, 10): 10
 Enter mortgage amortization period (5, 10, 15, 20, 25): 25
 Interest rate for the term will be 6.00%
 Monthly payment amount is: $3160.47
@@ -64,7 +64,7 @@ Enter down payment percentage (minimum 7.015): 30
 Down payment amount is $201000
 Mortgage insurance price is $0
 Total mortgage amount is $469000
-Enter Mortgage Term (1, 2, 3, 5, 10): 5
+Enter mortgage term (1, 2, 3, 5, 10): 5
 Enter mortgage amortization period (5, 10, 15, 20, 25): 5
 Interest rate for the term will be 5.30%
 Monthly payment amount is: $8902.79
@@ -133,7 +133,7 @@ Month     Opening Bal         Payment       Principal        Interest     Closin
    59        17689.57         8902.79         8825.51           77.28         8864.07
    60         8864.07         8902.79         8864.07           38.72           -0.00
 =====================================================================================
-Total                                       469000.00        65167.37
+Total                                       469000.00        65167.37 
 PS C:\Users\dracy\Desktop\SAIT Fall 2026\OOP 1 (CPRG-216-ITC)\GroupLabs\Assignment2> 
 
 
@@ -147,7 +147,7 @@ Enter down payment percentage (minimum 20): 25
 Down payment amount is $250000
 Mortgage insurance price is $0
 Total mortgage amount is $749999
-Enter Mortgage Term (1, 2, 3, 5, 10): 3
+Enter mortgage term (1, 2, 3, 5, 10): 3
 Enter mortgage amortization period (5, 10, 15, 20, 25): 17
 Please enter a valid choice
 Enter mortgage amortization period (5, 10, 15, 20, 25): 15
@@ -167,9 +167,9 @@ Enter down payment percentage (minimum 20): 20
 Down payment amount is $284000
 Mortgage insurance price is $0
 Total mortgage amount is $1136000
-Enter Mortgage Term (1, 2, 3, 5, 10): 22
+Enter mortgage term (1, 2, 3, 5, 10): 22
 Please enter a valid choice
-Enter Mortgage Term (1, 2, 3, 5, 10): 2
+Enter mortgage term (1, 2, 3, 5, 10): 2
 Enter mortgage amortization period (5, 10, 15, 20, 25): 10
 Interest rate for the term will be 5.80%
 Monthly payment amount is: $12459.09
@@ -203,6 +203,6 @@ Month     Opening Bal         Payment       Principal        Interest     Closin
    24       965436.84        12459.09         7848.22         4610.87       957588.62
 =====================================================================================
 Total                                       178411.38       120606.90
-PS C:\Users\dracy\Desktop\SAIT Fall 2026\OOP 1 (CPRG-216-ITC)\GroupLabs\Assignment2> 
+PS C:\Users\dracy\Desktop\SAIT Fall 2026\OOP 1 (CPRG-216-ITC)\GroupLabs\Assignment2>
 
 
