@@ -10,7 +10,7 @@ Kenny Vo
 Assignment: Programming Strategies
 Part 2: The Amortization Schedule
 
-Started: 2026-10-26 | Finished: 2026-11-10
+Started: 2026-10-26 | Finished: 2026-XX-XX
 '''
 
 # Minimum Down Payment Component
